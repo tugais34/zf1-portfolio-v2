@@ -1,0 +1,50 @@
+<?= $this->Doctype();?>
+<html>
+<head>
+<?= $this->headTitle() . PHP_EOL?>
+<?= $this->headMeta()
+					->appendName('keywords', 'Portfolio')
+					->appendName('SKYPE_TOOLBAR', 'SKYPE_TOOLBAR_PARSER_COMPATIBLE') . PHP_EOL;?>
+<?= $this->headLink()
+					->appendStylesheet('/css-ie.css', 'screen', 'IE')
+					->appendAlternate(array(
+								'rel' => 'shortcut icon', 
+								'href' => '/favicon.ico', 
+								'conditionalStylesheet' => 'ie',
+								'type' => 'image/x-icon'
+					))
+					->appendAlternate(array(
+							'rel' => 'icon',
+							'href' => '/favicon.ico',
+							'type' => 'image/png'
+					)) . PHP_EOL; ?>
+<?= $this->jQuery()->setRenderMode(ZendX_JQuery::RENDER_STYLESHEETS);?>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <?php 
+	  	$config = new Zend_Config_Xml(APPLICATION_PATH . "/configs/navigation.xml", "nav");
+	  	
+	  	/* @var $container Zend_Navigation */
+	  	$container = new Zend_Navigation($config);
+
+	  	/* @var $nav Zend_View_Helper_Navigation */
+	  	$nav = $this->navigation($container);
+	  	$nav->setAcl(Zend_Registry::get('Zend_Acl'));
+	  	$nav->setDefaultRole('guest');
+	  	
+	  	if(Zend_Auth::getInstance()->hasIdentity()){
+	  		$nav->setRole(Zend_Auth::getInstance()->getIdentity());
+	  	}
+
+	  	echo $nav->menu()->setPartial('partials/menu-bootstrap.phtml');
+	  ?>
+</nav>
+<div class="container">
+	  <?= $nav->breadcrumbs()->setMinDepth(0)->setLinkLast(true)->setPartial('partials/breadcrumb-bootstrap.phtml');?>
+		<?= $this->partial("partials/priorityMessages.phtml", array('priorityMessages' => $this->priorityMessenger()))?>
+		<?= $this->layout()->content; ?>
+</div>
+		<?= $this->jQuery()->setRenderMode(ZendX_JQuery::RENDER_ALL - ZendX_JQuery::RENDER_STYLESHEETS);?>
+</body>
+</html>

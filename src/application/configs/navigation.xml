@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <nav>
+    <home>
+      <label>Accueil</label>
+      <route>indexIndex</route>
+      <controller>index</controller>
+      <action>index</action>
+      <pages>
+        <error>
+          <label>Erreur</label>
+          <controller>error</controller>
+          <action>error</action>
+          <visible>0</visible>
+        </error>
+      </pages>
+    </home>
+    <user>
+      <label>Utilisateur</label>
+      <uri>#</uri>
+      <icon>user</icon>
+      <pages>
+        <list>
+          <label>Liste utilisateur</label>
+          <controller>user</controller>
+          <action>list</action>
+          <resource>user</resource>
+          <privilege>read</privilege>
+        </list>
+        
+        <create>
+          <label>Création utilisateur</label>
+          <controller>user</controller>
+          <action>create</action>
+          <resource>user</resource>
+          <privilege>create</privilege>
+        </create>
+        <read>
+          <label>Lecture utilisateur</label>
+          <controller>user</controller>
+          <action>read</action>
+          <resource>user</resource>
+          <privilege>read</privilege>
+        </read>
+        <update>
+          <label>Modification Utilisateur</label>
+          <route>userUpdate</route>
+          <resource>user</resource>
+          <privilege>update</privilege>
+          <params>
+            <id></id>
+          </params>
+        </update>
+        <delete>
+          <label>Suppression utilisateur</label>
+          <controller>user</controller>
+          <action>delete</action>
+          <resource>user</resource>
+          <privilege>delete</privilege>
+        </delete>
+      </pages>
+    </user>
+    <authLogin>
+      <label>Sign In</label>
+      <route>authLogin</route>
+      <controller>auth</controller>
+      <action>login</action>
+      <resource>auth</resource>
+      <privilege>login</privilege>
+    </authLogin>
+    <authLogout>
+      <label>Sign out</label>
+      <route>authLogout</route>
+      <controller>auth</controller>
+      <action>logout</action>
+      <resource>auth</resource>
+      <privilege>logout</privilege>
+    </authLogout>
+    <google>
+      <label>Ton meilleur ami</label>
+      <uri>http://google.fr</uri>
+    </google>
+  </nav>
+</config>

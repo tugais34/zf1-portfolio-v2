@@ -1,0 +1,94 @@
+#ZFDebug_debug {
+    font: 10px/1.4em Lucida Grande, Lucida Sans Unicode, sans-serif;
+    position:fixed;
+    bottom:5px;
+    left:5px;
+    color:#000;
+    z-index: 255;
+    background-color: #333333;
+}
+
+#ZFDebug_debug .ZFDebug_panel h4{
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+#ZFDebug_debug span{
+    margin-left: 0;
+}
+
+#ZFDebug_debug .ZFDebug_panel p, #ZFDebug_debug .ZFDebug_panel pre{
+    font-size: 10px;
+}
+
+#ZFDebug_exception h4{
+	color: #fff;
+}
+#ZFDebug_debug ol {
+    margin:10px 0px;
+    padding:0 25px
+}
+#ZFDebug_debug li {
+    margin:0 0 10px 0;
+}
+#ZFDebug_debug .clickable {
+    cursor:pointer
+}
+#ZFDebug_toggler { 
+    font-weight:bold;
+    background:#333;
+    color: #fff;
+    -moz-border-radius-top-right: 3px;
+    -moz-border-radius-bottom-right: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: 1px solid #333;
+}
+.ZFDebug_span {
+    font: 10px/1.4em Lucida Grande, Lucida Sans Unicode, sans-serif;
+    border: 1px solid #333;
+    border-right: 1px solid #555;
+    background:#333;
+    color: #C0C0C0;
+    padding: 5px 5px;
+/*     -moz-box-shadow: 0 0 5px #888; */
+/*     -webkit-box-shadow: 0 0 5px#888; */
+/*     box-shadow: 0 0 5px #888; */
+}
+.ZFDebug_last {
+    border: 1px solid #333;
+    height: 16px;
+}
+.ZFDebug_panel {
+    text-align:left;
+    position:absolute;
+    bottom:28px;
+    width:600px;
+    max-height:400px;
+    overflow:auto;
+    display:none;
+    background:#E8E8E8;
+    padding:5px;
+    border: 1px solid #E0E0E0;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    filter : alpha(opacity=95);
+    -moz-opacity : 0.95;
+    opacity : 0.95;
+    text-shadow: 0 1px 0 #fff;
+    font-size: .9em;
+}
+.ZFDebug_panel a {
+    color: #00567A;
+}
+.ZFDebug_panel .pre {font: 11px/1.4em Monaco, Lucida Console, monospace; margin:0 0 0 22px}
+#ZFDebug_exception { 
+    border:0px solid #CD0A0A;
+    background-color: #AD0101;
+    text-shadow: 0 1px 0 #333;
+    color: #fff;
+    display: block;
+}

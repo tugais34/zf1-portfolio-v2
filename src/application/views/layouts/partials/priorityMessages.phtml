@@ -1,0 +1,20 @@
+<?php
+echo '<div id="priority_messages">';
+foreach ( $this->priorityMessages as $label => $messages ) {
+	if (count ( $messages )) {
+		echo '<div class="alert alert-' . $label . ' alert-dismissible" role="alert">';
+		echo '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
+		echo '<strong>' . ucfirst ( $label ) . '!</strong>';
+		if (count ( $messages ) > 1) {
+			echo '<ul class="' . $label . '_message">';
+			foreach ( $messages as $message ) {
+				echo '<li>' . $message . '</li>';
+			}
+			echo '</ul>';
+		} else {
+			echo ' ' . $messages [0];
+		}
+		echo '</div>';
+	}
+}
+echo '</div>';

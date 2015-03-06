@@ -1,0 +1,18 @@
+http://www.debianadmin.com/install-and-configure-apache2-with-php5-and-ssl-support-in-debian-etch.html
+
+openssl req $@ -new -x509 -days 365 -nodes -out /etc/apache2/apache.pem -keyout /etc/apache2/apache.pem
+
+chmod 600 /etc/apache2/apache.pem
+
+a2enmod ssl
+
+service apache2 restart
+
+/etc/apache2/sites-available/http-www.project.dev
+
+<virtualhost *:443>
+
+SSLEngine on
+SSLCertificateFile /etc/apache2/apache.pem
+
+service apache2 reload

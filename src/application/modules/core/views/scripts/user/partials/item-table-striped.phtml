@@ -1,0 +1,24 @@
+<?php if($this->partialCounter == 1){?>
+<table class="table table-striped">
+<thead>
+	<tr>
+		<th>#</th>
+		<th>Username</th>
+		<th>Password</th>
+		<th>Created</th>
+	</r>
+</thead>
+<tbody>
+<?php }?>
+
+<tr>
+	<td><?= $this->id?></td>
+	<td><?= $this->login?></td>
+	<td><?= $this->password?></td>
+	<td><?= $this->created->toString(Zend_Date::DATE_MEDIUM)?></td>
+</tr>
+
+<?php if($this->partialTotalCount == $this->partialCounter){?>
+</tbody>
+</table>
+<?php }?>

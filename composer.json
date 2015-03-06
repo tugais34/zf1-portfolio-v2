@@ -1,0 +1,22 @@
+{
+    "name": "root/project",
+    "description": "Portfolio",
+    "require": {
+        "zendframework/zendframework1": "~1.12"
+    },
+    "require-dev": {},
+    "license": "MIT",
+    "autoload": {
+      "psr-0": {
+        "ZFDebug_": "src/library/",
+        "ZendX_": "src/library/",
+        "Ip_": "src/library/"
+      }
+    },
+    "authors": [
+        {
+            "name": "Me",
+            "email": "me@example.com"
+        }
+    ]
+}

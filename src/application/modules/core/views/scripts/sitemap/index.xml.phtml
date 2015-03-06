@@ -1,0 +1,8 @@
+<?php
+	$config = new Zend_Config_Xml(APPLICATION_PATH . "/configs/navigation.xml", "nav");
+	$container = new Zend_Navigation($config);
+	
+	$nav = $this->navigation($container);
+
+	echo $nav->sitemap();
+?>
